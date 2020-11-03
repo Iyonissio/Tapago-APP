@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cdImage"
+    android:layout_width="@dimen/_140sdp"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/_5sdp"
+    android:layout_margin="@dimen/_5sdp">
+
+    <RelativeLayout
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/imgBackground"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_115sdp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/imgTick"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:background="@drawable/ic_right" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txtCategoryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_80sdp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Business"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

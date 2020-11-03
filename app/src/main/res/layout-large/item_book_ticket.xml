@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_55sdp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtTypeGold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Gold"
+                android:textColor="@color/button_color"
+                android:textSize="@dimen/_13sdp" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtDiscount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="discount"
+                android:textColor="@color/button_color"
+                android:textSize="@dimen/_9sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_55sdp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/shape_edit"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/imgMinus"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:src="@drawable/ic_decriss"
+                    android:tint="@color/gray" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="0"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/_13sdp" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/imgPlus"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:src="@drawable/ic_incress"
+                    android:tint="@color/colorAccent" />
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/remainingVoucher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:text="Only 2550 ticket left"
+                android:textColor="@color/button_color"
+                android:textSize="@dimen/_9sdp"
+                android:visibility="visible"
+                app:fontFamily="@font/montserrat_regular" />
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txtTotalGold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="end"
+            android:text="MT0.00"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:background="@color/colorAccent" />
+
+</LinearLayout>

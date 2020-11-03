@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/_3sdp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="@dimen/_5sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_5sdp">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Lorem ipsum"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|bottom"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tvVoucherType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Voucher Type"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtVoucherType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Gold"
+                        android:textColor="@color/lightBlack"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tvStartDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Start Date"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtStartDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="14 May 2019"
+                        android:textColor="@color/lightBlack"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tvStartTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Start Time"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtStartTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="14 May 2019"
+                        android:textColor="@color/lightBlack"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tvQuantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Quantity"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtQuantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="14"
+                        android:textColor="@color/lightBlack"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tvQrCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtQrCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/lightBlack"
+                        android:textSize="@dimen/_12sdp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tvPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Price"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="MT145.00"
+                        android:textColor="@color/lightBlack"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tvEndDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="End Date"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtEndDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="14 May 2019"
+                        android:textColor="@color/lightBlack"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tvEndTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="End Time"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtEndTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="14 May 2019"
+                        android:textColor="@color/lightBlack"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tvStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Status"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Pending"
+                        android:textColor="@color/lightBlack"
+                        android:textSize="@dimen/_12sdp" />
+
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tvTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/lightBlack"
+                        android:textSize="@dimen/_12sdp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btnProcess"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/button_shape"
+                android:fontFamily="@font/montserrat_regular"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

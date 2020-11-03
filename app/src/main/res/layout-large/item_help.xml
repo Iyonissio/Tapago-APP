@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5sdp"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="@dimen/_5sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:src="@drawable/ic_help" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_question"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/montserrat_regular"
+            android:maxLines="1"
+            android:text="how to create an event?"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13sdp" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/img_expand"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:background="@drawable/ic_down_arrow"
+            android:padding="@dimen/_15sdp" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/item_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:ellipsize="end"
+        android:fontFamily="@font/montserrat_thin"
+        android:maxLines="1"
+        android:text="how to create an event?"
+        android:textColor="@color/lightBlack"
+        android:textSize="@dimen/_12sdp" />
+</LinearLayout>

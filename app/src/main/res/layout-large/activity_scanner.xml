@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.ScannerActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/ivBackArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/_8sdp"
+                android:src="@drawable/ic_cross" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--<android.support.v7.widget.AppCompatImageView
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_vouchers" />-->
+
+            <android.support.v7.widget.CardView
+                android:layout_gravity="center"
+                android:layout_width="@dimen/_180sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_15sdp"
+                app:cardElevation="@dimen/_3sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtVoucher"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_primary"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:gravity="center"
+                        android:text="Voucher"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtTicket"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_white"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:gravity="center"
+                        android:text="Ticket "
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtScanCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="SCAN YOUR CODE"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp" />
+
+            <RelativeLayout
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_200sdp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_15sdp">
+<!--
+                <fragment
+                    android:id="@+id/barcode_fragment"
+                    android:name="info.androidhive.barcode.BarcodeReader"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:auto_focus="true"
+                    app:use_flash="false" />
+
+                <info.androidhive.barcode.ScannerOverlay
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#44000000"
+                    app:line_color="@color/colorAccent"
+                    app:line_speed="6"
+                    app:line_width="4"
+                    app:square_height="280"
+                    app:square_width="280" />-->
+
+
+                <com.budiyev.android.codescanner.CodeScannerView
+                    android:id="@+id/scanner_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:autoFocusButtonColor="@android:color/white"
+                    app:autoFocusButtonVisible="false"
+                    app:flashButtonColor="@android:color/white"
+                    app:flashButtonVisible="false"
+                    app:frameAspectRatioHeight="1"
+                    app:frameAspectRatioWidth="1"
+                    app:frameColor="@color/colorAccent"
+                    app:frameCornersRadius="0dp"
+                    app:frameCornersSize="20dp"
+                    app:frameSize="1"
+                    app:frameThickness="2dp"
+                    app:maskColor="#77000000" />
+            </RelativeLayout>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtOR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="or"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/edtCode"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_25sdp"
+                android:backgroundTint="@color/colorAccent"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center"
+                android:textSize="@dimen/_13sdp"
+                android:imeOptions="actionDone"
+                android:hint="Enter your voucher code here"
+                android:inputType="text" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/edtAmount"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_25sdp"
+                android:textSize="@dimen/_13sdp"
+                android:backgroundTint="@color/colorAccent"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center"
+                android:imeOptions="actionDone"
+                android:hint="Enter Amount"
+                android:inputType="number" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btnSubmit"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:background="@drawable/button_shape"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

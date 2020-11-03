@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/radio_gold"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginStart="-4dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:buttonTint="@color/button_color"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="GOLD"
+        android:textColor="@color/button_color"
+        android:textSize="@dimen/_10sdp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/edQty"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:backgroundTint="@color/colorAccent"
+            android:enabled="false"
+            android:maxLength="4"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="Quantity"
+            android:inputType="number"
+            android:textSize="@dimen/_12sdp" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/edAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorAccent"
+            android:enabled="false"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="Amount"
+            android:maxLength="4"
+            android:inputType="number"
+            android:textSize="@dimen/_12sdp" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/edDisCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.9"
+            android:backgroundTint="@color/colorAccent"
+            android:enabled="false"
+            android:drawableEnd="@drawable/ic_percentage"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="Discount"
+            android:maxLength="3"
+            android:inputType="number"
+            android:textSize="@dimen/_12sdp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1.1"
+            android:gravity="center|top"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtCTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_thin"
+                android:text="Total"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:fontFamily="@font/montserrat_medium"
+                android:maxLines="2"
+                android:text="MT0.00"
+                android:textColor="@color/button_color"
+                android:textSize="@dimen/_11sdp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

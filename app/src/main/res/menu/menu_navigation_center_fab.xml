@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/i_home"
+        android:checked="true"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/i_event"
+        android:icon="@drawable/ic_event"
+        android:title="@string/myEvent" />
+    <!--must set the item title to empty-->
+    <item
+        android:id="@+id/i_create_event"
+        android:title="" />
+    <item
+        android:id="@+id/i_profile"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/profile" />
+    <item
+        android:id="@+id/i_setting"
+        android:icon="@drawable/ic_setting"
+        android:title="@string/setting" />
+</menu>

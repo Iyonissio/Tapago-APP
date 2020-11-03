@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="@color/colorPrimary"
+        android:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/ivBackArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/_8sdp"
+                android:src="@drawable/ic_left_arrow" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Book Ticket"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rlEnglish"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="English"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp" />
+
+            <ImageView
+                android:id="@+id/imgEn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:src="@drawable/ic_rights"
+                android:tint="@color/colorPrimary"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <View
+            style="@style/View"
+            android:layout_below="@id/rlEnglish" />
+
+        <RelativeLayout
+            android:id="@+id/rlSpanish"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_below="@+id/rlEnglish">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="@string/portuguese"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp" />
+
+            <ImageView
+                android:id="@+id/imgSp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:src="@drawable/ic_rights"
+                android:tint="@color/colorPrimary"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <View
+            style="@style/View"
+            android:layout_below="@id/rlSpanish" />
+    </RelativeLayout>
+</LinearLayout>

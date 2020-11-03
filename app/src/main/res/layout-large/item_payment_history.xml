@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_10sdp"
+    android:layout_marginEnd="@dimen/_10sdp"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/_3sdp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="@dimen/_5sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtEventName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Lorem ipsum"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp" />
+
+
+            <LinearLayout
+                android:layout_below="@id/txtEventName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tvPaymentType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Payment Type"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtPaymentType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Voucher"
+                        android:textColor="@color/lightBlack"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tvPaymentDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Payment Date"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtPaymentDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="14 May 2019  11:00"
+                        android:textColor="@color/lightBlack"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tvQty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Quantity"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtQty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="1"
+                        android:textColor="@color/lightBlack"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tvDiscount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Discount"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtDiscount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/lightBlack"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/payment_types"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txPaymentType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/lightBlack"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/payment_statuss"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtPaymentStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/lightBlack"
+                        android:textSize="@dimen/_12sdp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtCategoryName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Gold"
+                        android:textColor="@color/button_color"
+                        android:textSize="@dimen/_15sdp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="MT145.00"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/_13sdp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

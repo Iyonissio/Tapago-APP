@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.ShippingActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="@color/orange"
+        android:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/ivBackArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/_8sdp"
+                android:src="@drawable/ic_left_arrow" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/shipping_details"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btncard_payment_pay"
+        android:layout_below="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycleViewProductDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="@string/total_amount"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtFinalPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtPaymentType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/please_select_payment_type"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+
+                <RadioGroup
+                    android:id="@+id/radGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioCOD"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@string/cod"
+                        android:maxLines="2"
+                        android:buttonTint="@color/orange"
+                        android:layout_weight="0.8"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <RadioButton
+                        android:id="@+id/radioOnPayment"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:maxLines="2"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:padding="@dimen/_5sdp"
+                        android:buttonTint="@color/orange"
+                        android:text="@string/online_payment"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/lrCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/til_card_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:focusedByDefault="true"
+                        android:visibility="visible">
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/edt_card_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:hint="@string/card_number"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:maxLength="16"
+                            android:maxLines="1"
+                            android:paddingEnd="@dimen/_5sdp"
+                            android:singleLine="true"
+                            android:textAlignment="viewStart"
+                            android:textColorHint="@color/red"
+                            android:textSize="@dimen/_13sdp"
+                            tools:ignore="RtlSymmetry" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:id="@+id/spinner_months"
+                            style="@style/mySpinnerItemStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:id="@+id/spinner_year"
+                            style="@style/mySpinnerItemStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/til_cvv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:focusedByDefault="true"
+                        android:visibility="visible">
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/edt_cvv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:hint="@string/cvv"
+                            android:imeOptions="actionNext"
+                            android:inputType="numberDecimal|numberPassword"
+                            android:maxLength="3"
+                            android:maxLines="1"
+                            android:paddingEnd="@dimen/_5sdp"
+                            android:singleLine="true"
+                            android:textAlignment="viewStart"
+                            android:textColorHint="@color/red"
+                            android:textSize="@dimen/_13sdp"
+                            tools:ignore="RtlSymmetry" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/til_name_on_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:focusedByDefault="true"
+                        android:visibility="visible">
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/edt_edt_name_on_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:hint="@string/card_holder_name"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:paddingEnd="@dimen/_5sdp"
+                            android:singleLine="true"
+                            android:textAlignment="viewStart"
+                            android:textColorHint="@color/red"
+                            android:textSize="@dimen/_13sdp"
+                            tools:ignore="RtlSymmetry" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btncard_payment_pay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@drawable/button_shape_payment"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/pay"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13sdp" />
+
+</RelativeLayout>

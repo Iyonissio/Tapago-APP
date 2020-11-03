@@ -1,0 +1,281 @@
+package com.tapago.app.activity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputLayout;
+import android.support.v7.widget.AppCompatButton;
+import android.support.v7.widget.AppCompatEditText;
+import android.support.v7.widget.AppCompatTextView;
+import android.text.TextUtils;
+import android.view.View;
+
+import com.hbb20.CountryCodePicker;
+import com.tapago.app.R;
+import com.tapago.app.model.BasicModel;
+import com.tapago.app.model.RegisterCaptionModel.RegisterCaption;
+import com.tapago.app.rest.RetrofitRestClient;
+import com.tapago.app.utils.AppUtils;
+import com.tapago.app.utils.MySharedPreferences;
+
+import java.net.SocketTimeoutException;
+import java.util.HashMap;
+import java.util.Objects;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class AddVendorActivity extends BaseActivity {
+
+    @BindView(R.id.edFirstName)
+    AppCompatEditText edFirstName;
+    @BindView(R.id.edLastName)
+    AppCompatEditText edLastName;
+    @BindView(R.id.edEmail)
+    AppCompatEditText edEmail;
+    @BindView(R.id.edMobile)
+    AppCompatEditText edMobile;
+    @BindView(R.id.edPassword)
+    AppCompatEditText edPassword;
+    @BindView(R.id.edCPassword)
+    AppCompatEditText edCPassword;
+    @BindView(R.id.inputFirstName)
+    TextInputLayout inputFirstName;
+    @BindView(R.id.inputLastName)
+    TextInputLayout inputLastName;
+    @BindView(R.id.inputEmail)
+    TextInputLayout inputEmail;
+    @BindView(R.id.inputMobile)
+    TextInputLayout inputMobile;
+    @BindView(R.id.inputPassword)
+    TextInputLayout inputPassword;
+    @BindView(R.id.inputCPassword)
+    TextInputLayout inputCPassword;
+    @BindView(R.id.ccp)
+    CountryCodePicker ccp;
+    @BindView(R.id.txtName)
+    AppCompatTextView txtName;
+    @BindView(R.id.btnSubmit)
+    AppCompatButton btnSubmit;
+    private String enterFirst = "", enterLast = "", enterEmail = "", validEmail = "", enterPassword = "", passwordLength = "", enterConfirmPwd = "", confirmPwdMatch = "", enterMobile = "", validMobile = "", validPassword = "";
+
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_add_vednor);
+        ButterKnife.bind(this);
+
+        if (MySharedPreferences.getMySharedPreferences().getLanguage().equalsIgnoreCase("en")) {
+            ccp.changeDefaultLanguage(CountryCodePicker.Language.ENGLISH);
+        } else {
+            ccp.changeDefaultLanguage(CountryCodePicker.Language.PORTUGUESE);
+        }
+
+        btnSubmit.setText(MySharedPreferences.getMySharedPreferences().getSubmit());
+        txtName.setText(MySharedPreferences.getMySharedPreferences().getAddVendor());
+
+        signUpCaptionApi();
+
+    }
+
+    /**
+     * signUpCaptionApi
+     */
+    private void signUpCaptionApi() {
+        if (AppUtils.isConnectedToInternet(getActivity())) {
+            showProgressDialog(getActivity());
+            HashMap<String, String> params = new HashMap<>();
+            params.put("activity_name", "RegisterActivity");
+            params.put("lang", MySharedPreferences.getMySharedPreferences().getLanguage());
+
+            Call<RegisterCaption> call;
+            call = RetrofitRestClient.getInstance().registercaptionApi(params);
+
+            if (call == null) return;
+
+            call.enqueue(new Callback<RegisterCaption>() {
+                @Override
+                public void onResponse(@NonNull Call<RegisterCaption> call, @NonNull Response<RegisterCaption> response) {
+                    hideProgressDialog();
+                    final RegisterCaption basicCaption;
+                    if (response.isSuccessful()) {
+                        basicCaption = response.body();
+                        if (Objects.requireNonNull(basicCaption).getCode() == 200) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    try {
+                                        inputFirstName.setHint(basicCaption.getActivity().getFirstName());
+                                        inputLastName.setHint(basicCaption.getActivity().getLastName());
+                                        inputEmail.setHint(basicCaption.getActivity().getEmail());
+                                        inputMobile.setHint(basicCaption.getActivity().getPhoneUmber());
+                                        inputPassword.setHint(basicCaption.getActivity().getPassword());
+                                        inputCPassword.setHint(basicCaption.getActivity().getConfirmPassword());
+                                        enterFirst = basicCaption.getActivity().getEnterFirstName();
+                                        enterLast = basicCaption.getActivity().getEnterLastName();
+                                        enterEmail = basicCaption.getActivity().getEnterEmail();
+                                        validEmail = basicCaption.getActivity().getEnterInvalidEmail();
+                                        enterPassword = basicCaption.getActivity().getEnterPassword();
+                                        passwordLength = basicCaption.getActivity().getEnterPasswordMiniLength();
+                                        enterConfirmPwd = basicCaption.getActivity().getEnterConfirmPassword();
+                                        confirmPwdMatch = basicCaption.getActivity().getEnterConfirmNotMetch();
+                                        enterMobile = basicCaption.getActivity().getEnterMobile();
+                                        validMobile = basicCaption.getActivity().getEnterInvalidMobile();
+                                        validPassword = basicCaption.getActivity().getValidPassword();
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            });
+                        } else if (Objects.requireNonNull(basicCaption).getCode() == 999) {
+                            logout();
+                        } else {
+                            showSnackBar(getActivity(), basicCaption.getMessage());
+                        }
+                    } else {
+                        showSnackBar(getActivity(), response.message());
+                    }
+                }
+
+                @Override
+                public void onFailure(@NonNull Call<RegisterCaption> call, @NonNull Throwable t) {
+                    hideProgressDialog();
+                    if (t instanceof SocketTimeoutException) {
+                        showSnackBar(getActivity(), getString(R.string.connection_timeout));
+                    } else {
+                        t.printStackTrace();
+                        showSnackBar(getActivity(), getString(R.string.something_went_wrong));
+                    }
+                }
+            });
+        } else {
+            showSnackBar(getActivity(), getString(R.string.no_internet));
+        }
+    }
+
+    /**
+     * Validation
+     */
+    private boolean signUpValidation() {
+        if (TextUtils.isEmpty(AppUtils.getText(edFirstName))) {
+            showSnackBar(getActivity(), enterFirst);
+            return false;
+        } else if (TextUtils.isEmpty(AppUtils.getText(edLastName))) {
+            showSnackBar(getActivity(), enterLast);
+            return false;
+        } else if (TextUtils.isEmpty(AppUtils.getText(edEmail))) {
+            showSnackBar(getActivity(), enterEmail);
+            return false;
+        } else if (!AppUtils.isEmailValid(AppUtils.getText(edEmail))) {
+            showSnackBar(getActivity(), validEmail);
+            return false;
+        } else if (TextUtils.isEmpty(AppUtils.getText(edMobile))) {
+            showSnackBar(getActivity(), enterMobile);
+            return false;
+        } else if (!AppUtils.isValidMobile(AppUtils.getText(edMobile))) {
+            showSnackBar(getActivity(), validMobile);
+            return false;
+        } else if (TextUtils.isEmpty(AppUtils.getText(edPassword))) {
+            showSnackBar(getActivity(), enterPassword);
+            return false;
+        } else if (!AppUtils.isValidPassword(AppUtils.getText(edPassword))) {
+            showSnackBar(getActivity(), validPassword);
+            return false;
+        } else if (TextUtils.isEmpty(AppUtils.getText(edCPassword))) {
+            showSnackBar(getActivity(), enterConfirmPwd);
+            return false;
+        } else if (!AppUtils.getText(edPassword).matches(AppUtils.getText(edCPassword))) {
+            showSnackBar(this, confirmPwdMatch);
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    @OnClick({R.id.ivBackArrow, R.id.btnSubmit})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.ivBackArrow:
+                Intent i = new Intent(getActivity(), CreateVendorActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(i);
+                finish();
+                AppUtils.finishFromLeftToRight(getActivity());
+                break;
+            case R.id.btnSubmit:
+                if (signUpValidation()) {
+                    addVendorAPi();
+                }
+                break;
+        }
+    }
+
+    /**
+     * call addVendor api
+     */
+    private void addVendorAPi() {
+        if (AppUtils.isConnectedToInternet(getActivity())) {
+            showProgressDialog(getActivity());
+            HashMap<String, String> params = new HashMap<>();
+            params.put("first_name", AppUtils.getText(edFirstName));
+            params.put("last_name", AppUtils.getText(edLastName));
+            params.put("country_code", ccp.getSelectedCountryCodeWithPlus());
+            params.put("contact_number", AppUtils.getText(edMobile));
+            params.put("country_code_name", ccp.getSelectedCountryNameCode());
+            params.put("email", AppUtils.getText(edEmail));
+            params.put("password", AppUtils.getText(edPassword));
+            params.put("type", "Vendor");
+            params.put("user_id", MySharedPreferences.getMySharedPreferences().getUserId());
+            params.put("device_id", MySharedPreferences.getMySharedPreferences().getDeviceId());
+            params.put("access_token", MySharedPreferences.getMySharedPreferences().getAccessToken());
+            params.put("lang", MySharedPreferences.getMySharedPreferences().getLanguage());
+
+            Call<BasicModel> call;
+            call = RetrofitRestClient.getInstance().vendorAddApi(params);
+
+            if (call == null) return;
+            call.enqueue(new Callback<BasicModel>() {
+                @Override
+                public void onResponse(@NonNull Call<BasicModel> call, @NonNull Response<BasicModel> response) {
+                    hideProgressDialog();
+                    final BasicModel basicModel;
+                    if (response.isSuccessful()) {
+                        basicModel = response.body();
+                        if (Objects.requireNonNull(basicModel).getCode() == 200) {
+                            AppUtils.showToast(getActivity(), basicModel.getMessage());
+                            Intent i = new Intent(getActivity(), CreateVendorActivity.class);
+                            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(i);
+                            finish();
+                            AppUtils.finishFromLeftToRight(getActivity());
+                        } else {
+                            showSnackBar(getActivity(), basicModel.getMessage());
+                        }
+                    } else {
+                        showSnackBar(getActivity(), response.message());
+                    }
+                }
+
+                @Override
+                public void onFailure(@NonNull Call<BasicModel> call, @NonNull Throwable t) {
+                    hideProgressDialog();
+                    if (t instanceof SocketTimeoutException) {
+                        showSnackBar(getActivity(), getString(R.string.connection_timeout));
+                    } else {
+                        t.printStackTrace();
+                        showSnackBar(getActivity(), getString(R.string.something_went_wrong));
+                    }
+                }
+            });
+        } else {
+            showSnackBar(getActivity(), getString(R.string.no_internet));
+        }
+    }
+
+}

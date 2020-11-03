@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AddNewAddressActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="@color/orange"
+        android:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/ivBackArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/_8sdp"
+                android:src="@drawable/ic_left_arrow" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/add_new_address"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_add_address"
+        android:layout_below="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til_firstname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:theme="@style/TextLabel">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edt_firstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="@string/enter_first_name"
+                    android:imeOptions="actionNext"
+                    android:inputType="text|textCapWords"
+                    android:maxLines="1"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:textSize="@dimen/_13sdp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til_lastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:theme="@style/TextLabel">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edt_lastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="@string/enter_last_name"
+                    android:imeOptions="actionNext"
+                    android:inputType="text|textCapWords"
+                    android:maxLines="1"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:textSize="@dimen/_13sdp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    app:ccp_defaultPhoneCode="258"
+                    app:ccp_textSize="@dimen/_13sdp" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/til_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:theme="@style/TextLabel">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/edt_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:hint="@string/enter_mobile_number"
+                        android:imeOptions="actionNext"
+                        android:inputType="phone"
+                        android:maxLength="16"
+                        android:maxLines="1"
+                        android:paddingEnd="@dimen/_5sdp"
+                        android:textSize="@dimen/_13sdp" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til_street_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:theme="@style/TextLabel">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edt_street_Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="@string/enter_street_name"
+                    android:imeOptions="actionNext"
+                    android:inputType="text|textCapWords"
+                    android:maxLength="200"
+                    android:maxLines="1"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:textSize="@dimen/_13sdp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til_house_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:theme="@style/TextLabel">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edt_house_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="@string/enter_house_no"
+                    android:imeOptions="actionNext"
+                    android:inputType="text|textCapWords"
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:textSize="@dimen/_13sdp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til_District"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:theme="@style/TextLabel">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edt_District"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="@string/enter_district"
+                    android:imeOptions="actionNext"
+                    android:inputType="text|textCapWords"
+                    android:maxLength="200"
+                    android:maxLines="1"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:textSize="@dimen/_13sdp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:theme="@style/TextLabel">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edt_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="@string/enter_city"
+                    android:imeOptions="actionNext"
+                    android:inputType="text|textCapWords"
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:textSize="@dimen/_13sdp" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtAddressType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="@string/choose_nick_name_for_this_address"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp" />
+
+            <RadioGroup
+                android:id="@+id/radGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioHome"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/home"
+                    android:buttonTint="@color/orange"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+
+                <RadioButton
+                    android:id="@+id/radioOffice"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/office"
+                    android:buttonTint="@color/orange"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+
+                <RadioButton
+                    android:id="@+id/radioOther"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/other"
+                    android:buttonTint="@color/orange"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+
+
+            </RadioGroup>
+        </LinearLayout>
+    </ScrollView>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_add_address"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@drawable/button_shape_payment"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/save_address"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13sdp" />
+</RelativeLayout>

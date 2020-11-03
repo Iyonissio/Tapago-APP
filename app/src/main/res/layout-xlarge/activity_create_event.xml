@@ -1,0 +1,566 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:background="@color/colorPrimary"
+        android:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/ivBackArrow"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_left_arrow" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="CREATE EVENT"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtEventCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Event Category"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp" />
+
+                <Spinner
+                    android:id="@+id/categorySpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textColor="@color/lightBlack" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/colorAccent" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtSelectVendor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Select Vendor"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edtSelectVendor"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:imeOptions="actionNext"
+                    android:hint="Select Vendor"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:focusable="false"
+                    android:textColor="@color/lightBlack"
+                    android:textSize="@dimen/_12sdp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtEventName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Event Name"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edt_event_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/lightBlack"
+                    android:textSize="@dimen/_12sdp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Event Organiser"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    android:visibility="gone" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edt_event_organiser"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="Enter your event organiser name"
+                    android:textColor="@color/lightBlack"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/txtStartEventTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_3sdp"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Start Event Time"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/edt_start_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:backgroundTint="@color/colorAccent"
+                            android:focusable="false"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:textColor="@color/lightBlack"
+                            android:textSize="@dimen/_12sdp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/txtEventStartdate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Start Event Date"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/edt_start_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:backgroundTint="@color/colorAccent"
+                            android:focusable="false"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:textColor="@color/lightBlack"
+                            android:textSize="@dimen/_12sdp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/txtEndTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_3sdp"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="End Event Time"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/edt_end_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:backgroundTint="@color/colorAccent"
+                            android:focusable="false"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:textColor="@color/lightBlack"
+                            android:textSize="@dimen/_12sdp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/txtEndDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="End Event Date"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/edt_end_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:backgroundTint="@color/colorAccent"
+                            android:focusable="false"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:textColor="@color/lightBlack"
+                            android:textSize="@dimen/_12sdp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtEventDes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Event Description"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edt_event_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="top"
+                    android:imeOptions="actionNext"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:maxLines="3"
+                    android:textColor="@color/lightBlack"
+                    android:textSize="@dimen/_12sdp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtEventAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Event Address"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edt_event_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/lightBlack"
+                    android:textSize="@dimen/_12sdp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtEventCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="City"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp" />
+
+                <android.support.v7.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/edt_event_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/lightBlack"
+                    android:textSize="@dimen/_12sdp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtEventVenue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Event Venue"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edt_event_venue"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/lightBlack"
+                    android:textSize="@dimen/_12sdp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/txtAddBanner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Add Event Banner"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11sdp"
+                            android:maxLines="2" />
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/add_event_banner"
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_pick_image" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/txtAddEventThumb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Add Event Banner Thumb"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11sdp"
+                            android:maxLines="2"/>
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/add_event_thumb"
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_pick_image" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtBudget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Budget"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edt_budget"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="MT100.0"
+                    android:maxLength="11"
+                    android:inputType="number"
+                    android:textColor="@color/lightBlack"
+                    android:textSize="@dimen/_12sdp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtEventFee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Event Fees"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edt_event_fee"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="MT100.0"
+                    android:enabled="false"
+                    android:inputType="number"
+                    android:textColor="@color/lightBlack"
+                    android:textSize="@dimen/_12sdp" />
+
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtTotalAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Total Amount"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edt_event_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="MT100.0"
+                    android:enabled="false"
+                    android:inputType="number"
+                    android:textColor="@color/lightBlack"
+                    android:textSize="@dimen/_12sdp" />
+
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtVoucherType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Voucher Type"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rcCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtTicket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Ticket"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rcTicket"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:background="@drawable/button_rounde_shape"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="Create Event"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

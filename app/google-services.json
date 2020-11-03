@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "305224987356",
+    "firebase_url": "https://tapago-d96b0.firebaseio.com",
+    "project_id": "tapago-d96b0",
+    "storage_bucket": "tapago-d96b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305224987356:android:8b44067015c908a334ba19",
+        "android_client_info": {
+          "package_name": "com.tapago.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "305224987356-k99sop2f09j00stc3e6ordkvv3rgc81u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB63YDWPn8CTiCf87wgD1K4fXgduDGEfuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "305224987356-k99sop2f09j00stc3e6ordkvv3rgc81u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

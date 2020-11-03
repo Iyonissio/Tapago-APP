@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_140sdp"
+        android:gravity="start">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@drawable/image_shadow" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profile_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@fonts/roboto_bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lrHome"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@drawable/ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/tvHome"
+                    style="@style/drawerTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@fonts/roboto_bold"
+                    android:text="@string/home"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+            </LinearLayout>
+
+            <View style="@style/View" />
+
+            <LinearLayout
+                android:id="@+id/lrRCView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@drawable/ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtRecently"
+                    style="@style/drawerTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@fonts/roboto_bold"
+                    android:text="Recently View"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+            </LinearLayout>
+
+            <View style="@style/View"
+                android:id="@+id/viewRecent"/>
+
+            <LinearLayout
+                android:id="@+id/lrOrderHistory"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@drawable/ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtOrderHistory"
+                    style="@style/drawerTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@fonts/roboto_bold"
+                    android:text="@string/order_history"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/vieworderHistory"
+                style="@style/View" />
+
+            <LinearLayout
+                android:id="@+id/lrShippingPaymentHistory"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@drawable/ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtShippingPaymentHistory"
+                    style="@style/drawerTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@fonts/roboto_bold"
+                    android:text="@string/shipping_payment_history"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/viewShippingPayment"
+                style="@style/View" />
+            <LinearLayout
+                android:id="@+id/lrPaymentHistory"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@drawable/ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtPaymentHistory"
+                    style="@style/drawerTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@fonts/roboto_bold"
+                    android:text="@string/payment_history"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+            </LinearLayout>
+
+            <View style="@style/View"
+                android:id="@+id/viewPayment"/>
+
+            <LinearLayout
+                android:id="@+id/lrVoucherList"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@drawable/ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal">
+
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtVoucherList"
+                    style="@style/drawerTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@fonts/roboto_bold"
+                    android:text="Voucher List"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+            </LinearLayout>
+
+            <View style="@style/View"
+                android:id="@+id/viewVoucher"/>
+
+
+            <LinearLayout
+                android:id="@+id/lrQrVoucher"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@drawable/ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtQrVoucher"
+                    style="@style/drawerTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@fonts/roboto_bold"
+                    android:text="Voucher Qr Code"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/viewQrVoucher"
+                style="@style/View" />
+
+            <LinearLayout
+                android:id="@+id/lrTicketList"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@drawable/ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtTicketList"
+                    style="@style/drawerTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@fonts/roboto_bold"
+                    android:text="Ticket List"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view"
+                style="@style/View" />
+
+            <LinearLayout
+                android:id="@+id/lrRedeem"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@drawable/ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtRedeem"
+                    style="@style/drawerTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@fonts/roboto_bold"
+                    android:text="Redeem Qr Code"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+            </LinearLayout>
+
+            <View style="@style/View"
+                android:id="@+id/viewRedeem"/>
+
+            <LinearLayout
+                android:id="@+id/lrCreateVendor"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@drawable/ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtCreateVendor"
+                    style="@style/drawerTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@fonts/roboto_bold"
+                    android:text="Create Vendor"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view1"
+                style="@style/View" />
+
+            <LinearLayout
+                android:id="@+id/lrUpdateCat"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@drawable/ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtUpdateCat"
+                    style="@style/drawerTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@fonts/roboto_bold"
+                    android:text="Update Categories"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/viewCat"
+                style="@style/View" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
