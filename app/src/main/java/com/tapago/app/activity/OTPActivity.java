@@ -155,6 +155,7 @@ public class OTPActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.txtResendCode:
                 firstPinView.setText("");
+                System.out.println("Antes do sendOTPAPI metodo------------------------");
                 sendOtpApi();
                 break;
             case R.id.btn_verify:
@@ -174,16 +175,20 @@ public class OTPActivity extends BaseActivity {
      * send Otp Api
      */
     private void sendOtpApi() {
+        System.out.println("sendOTP Entrei");
         if (AppUtils.isConnectedToInternet(getActivity())) {
             showProgressDialog(getActivity());
             HashMap<String, String> map = new HashMap<>();
             map.put("mobile_no", countryCode + number);
             map.put("lang", MySharedPreferences.getMySharedPreferences().getLanguage());
             map.put("email", email);
+            System.out.println("Dentro do sendOTP");
             if (RestConstant.PROFILE_UPDATE.equalsIgnoreCase("update")) {
                 map.put("user_id", MySharedPreferences.getMySharedPreferences().getUserId());
+                System.out.println("Dentro do sendOTP---if SIM");
             } else {
                 map.put("user_id", "");
+                System.out.println("Dentro do sendOTP---if NAO");
             }
             map.put("access_token", MySharedPreferences.getMySharedPreferences().getAccessToken());
             map.put("user_device_id", MySharedPreferences.getMySharedPreferences().getDeviceId());

@@ -6,7 +6,7 @@ public class RestConstant {
    //static final String BASE_URL = "https://voucherapp.xceltec.com/public/";
 
     // live
-    static final String BASE_URL = "https://api.tapago.co/public/";
+    static final String BASE_URL = "http://162.0.237.160:4001";
 
     public static final String LOGIN_API = "api/login";
     public static final String SEND_OTP_API = "api/sendotp";

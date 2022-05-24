@@ -60,7 +60,6 @@ import retrofit2.http.Part;
 import retrofit2.http.PartMap;
 
 public interface ApiService {
-
     @FormUrlEncoded
     @POST(RestConstant.LOGIN_API)
     Call<Login> validateLogin(@FieldMap HashMap<String, String> parameters);

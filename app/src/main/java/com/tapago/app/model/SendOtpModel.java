@@ -3,12 +3,15 @@ package com.tapago.app.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+
 public class SendOtpModel {
 
     @SerializedName("code")
     @Expose
     private Integer code;
+
     @SerializedName("message")
+
     @Expose
     private String message;
 
@@ -27,4 +30,5 @@ public class SendOtpModel {
     public void setMessage(String message) {
         this.message = message;
     }
+
 }

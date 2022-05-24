@@ -1,6 +1,7 @@
 package com.tapago.app.activity;
 
 import android.content.Intent;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
@@ -20,6 +21,7 @@ import com.tapago.app.utils.AppUtils;
 import com.tapago.app.utils.MySharedPreferences;
 
 import java.net.SocketTimeoutException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -88,6 +90,7 @@ public class SignUpActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.btnRegister:
                 if (signUpValidation()) {
+                    System.out.println("Entrei na ValidacaoSignUP");
                     sendOtpApi();
                 }
                 break;
@@ -223,6 +226,7 @@ public class SignUpActivity extends BaseActivity {
      * send Otp Api
      */
     private void sendOtpApi() {
+        System.out.println("sendOTP Entrei");
         if (AppUtils.isConnectedToInternet(getActivity())) {
             showProgressDialog(getActivity());
             HashMap<String, String> map = new HashMap<>();
@@ -232,15 +236,17 @@ public class SignUpActivity extends BaseActivity {
             map.put("user_id", "");
             map.put("access_token", MySharedPreferences.getMySharedPreferences().getAccessToken());
             map.put("user_device_id", MySharedPreferences.getMySharedPreferences().getDeviceId());
-
+            System.out.println("sendOTP Entrei - Dados");
+            System.out.println("HASMAP---------------->"+Arrays.asList(map));
             Call<SendOtpModel> call;
             call = RetrofitRestClient.getInstance().sendOtp(map);
-
+            System.out.println("Antes do call return-------");
             if (call == null) return;
-
+            System.out.println("Apos o call return---------");
             call.enqueue(new Callback<SendOtpModel>() {
                 @Override
                 public void onResponse(@NonNull Call<SendOtpModel> call, @NonNull Response<SendOtpModel> response) {
+                    System.out.print("Dentro do enfileiramento de Dados------");
                     hideProgressDialog();
                     final SendOtpModel sendOtpModel;
                     if (response.isSuccessful()) {
@@ -271,10 +277,13 @@ public class SignUpActivity extends BaseActivity {
 
                 @Override
                 public void onFailure(@NonNull Call<SendOtpModel> call, @NonNull Throwable t) {
+                    System.out.print("Correu para a falha------");
                     hideProgressDialog();
                     if (t instanceof SocketTimeoutException) {
+                        System.out.print("Correu para a falha 1------");
                         showSnackBar(getActivity(), getString(R.string.connection_timeout));
                     } else {
+                        System.out.print("Correu para a falha 2------");
                         t.printStackTrace();
                         showSnackBar(getActivity(), getString(R.string.something_went_wrong));
                     }
