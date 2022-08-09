@@ -5,7 +5,7 @@ public class RestConstant {
     //local
    //static final String BASE_URL = "https://voucherapp.xceltec.com/public/";
 
-    // live
+    // live ip
 //    static final String BASE_URL = "http://162.0.237.160:4001";
       //my local network speranza
 //    static final String BASE_URL = "http://192.168.18.71:8000";
