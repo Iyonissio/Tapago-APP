@@ -135,6 +135,7 @@ public class VouchersListActivity extends BaseActivity implements PaymentMethodN
     }
 
     private void voucherListUserApi(final int page) {
+        System.out.println("Lista de Vouchers do USUARIO-----------------------");
         if (AppUtils.isConnectedToInternet(getActivity())) {
             if (page == 1) {
                 try {
@@ -145,6 +146,7 @@ public class VouchersListActivity extends BaseActivity implements PaymentMethodN
             } else {
                 vouchersListAdapter.showLoadMore(true);
             }
+            System.out.println("Lista de Vouchers do USUARIO-----------------------");
             HashMap<String, String> params = new HashMap<>();
             params.put("user_id", MySharedPreferences.getMySharedPreferences().getUserId());
             params.put("access_token", MySharedPreferences.getMySharedPreferences().getAccessToken());

@@ -1,2 +1,4 @@
-package com.tapago.app.activity;public class TesteActivity {
+package com.tapago.app.activity;
+
+public class TesteActivity {
 }

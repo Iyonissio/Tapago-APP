@@ -41,8 +41,8 @@ public class PaymentActivity extends BaseActivity {
 
     @BindView(R.id.radioCOD)
     RadioButton radioCOD;
-    @BindView(R.id.radioOnPayment)
-    RadioButton radioOnPayment;
+//    @BindView(R.id.radioOnPayment)
+//    RadioButton radioOnPayment;
     @BindView(R.id.radGroup)
     RadioGroup radGroup;
     @BindView(R.id.edt_card_number)
@@ -189,6 +189,7 @@ public class PaymentActivity extends BaseActivity {
             RadioButton rb = radGroup.findViewById(radGroup.getCheckedRadioButtonId());
             HashMap<String, String> map = new HashMap<>();
             map.put("user_id", MySharedPreferences.getMySharedPreferences().getUserId());
+//            map.put("mobile_no", cCodePicker.getSelectedCountryCodeWithPlus() + AppUtils.getText(edMobile));
             map.put("access_token", MySharedPreferences.getMySharedPreferences().getAccessToken());
             map.put("device_id", MySharedPreferences.getMySharedPreferences().getDeviceId());
             map.put("amount", amount);

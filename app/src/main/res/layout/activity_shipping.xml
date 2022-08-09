@@ -66,17 +66,17 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_10sdp"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
                 android:orientation="horizontal">
 
                 <android.support.v7.widget.AppCompatTextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:fontFamily="@font/montserrat_bold"
                     android:gravity="center_vertical"
-                    android:layout_weight="1"
                     android:text="@string/total_amount"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_11sdp" />
@@ -85,8 +85,8 @@
                     android:id="@+id/txtFinalPrice"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:fontFamily="@font/montserrat_bold"
                     android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_bold"
                     android:gravity="end"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_11sdp" />
@@ -120,30 +120,32 @@
                         android:id="@+id/radioCOD"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:padding="@dimen/_5sdp"
-                        android:text="@string/cod"
-                        android:maxLines="2"
-                        android:buttonTint="@color/orange"
                         android:layout_weight="0.8"
+                        android:buttonTint="@color/orange"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:maxLines="2"
+                        android:padding="@dimen/_5sdp"
+                        android:text="m-Pesa"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_13sdp" />
+
 
                     <RadioButton
                         android:id="@+id/radioOnPayment"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:maxLines="2"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:padding="@dimen/_5sdp"
+                        android:layout_weight="1"
                         android:buttonTint="@color/orange"
-                        android:text="@string/online_payment"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:maxLines="2"
+                        android:padding="@dimen/_5sdp"
+                        android:text="COD"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_13sdp" />
 
                 </RadioGroup>
+
 
                 <LinearLayout
                     android:id="@+id/lrCard"

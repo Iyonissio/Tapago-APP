@@ -59,8 +59,8 @@ public class ShippingActivity extends BaseActivity {
     AppCompatTextView txtPaymentType;
     @BindView(R.id.radioCOD)
     RadioButton radioCOD;
-    @BindView(R.id.radioOnPayment)
-    RadioButton radioOnPayment;
+//    @BindView(R.id.radioOnPayment)
+//    RadioButton radioOnPayment;
     @BindView(R.id.radGroup)
     RadioGroup radGroup;
     @BindView(R.id.edt_card_number)

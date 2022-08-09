@@ -23,13 +23,13 @@ public class Datum {
     @SerializedName("ticket_category_name")
     @Expose
     private String ticketCategoryName;
-    @SerializedName("user_name")
+    @SerializedName("created_by")
     @Expose
     private String userName;
-    @SerializedName("voucher_code")
+    @SerializedName("ticket_code")
     @Expose
     private String voucherCode;
-    @SerializedName("redeem_amount")
+    @SerializedName("amount")
     @Expose
     private Integer redeemAmount;
 

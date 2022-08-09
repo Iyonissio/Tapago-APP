@@ -26,6 +26,7 @@ import com.tapago.app.utils.MySharedPreferences;
 
 import java.net.SocketTimeoutException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
@@ -62,6 +63,8 @@ public class BookTicketActivity extends BaseActivity {
     @BindView(R.id.txtGrandTotal)
     AppCompatTextView txtGrandTotal;
 
+
+
     private ArrayList<Datum> ticketListArray = new ArrayList<>();
     TicketListAdapter ticketListAdapter;
     String strEventID = "", strMerchantId = "";
@@ -70,6 +73,7 @@ public class BookTicketActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        System.out.println("Mandando dados do Tiket Para o Front usando 75 onCreate ----------");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_ticket);
         ButterKnife.bind(this);
@@ -94,7 +98,10 @@ public class BookTicketActivity extends BaseActivity {
                 finish();
                 AppUtils.finishFromLeftToRight(getActivity());
                 break;
+//            case R.id.btnRadio:
+//                showSnackBar(getActivity(), getString(R.string.something_went_wrong));
             case R.id.btnProceed:
+                System.out.println("Clicou no Botao");
                 if (txtTicketTotal.getText().toString().length() > 0) {
                     for (int i = 0; i < ticketListArray.size(); i++) {
                         View view1 = rlBookTicket.getChildAt(i);
@@ -128,15 +135,18 @@ public class BookTicketActivity extends BaseActivity {
      * bookTicket Api
      */
     private void bookListApi() {
+        System.out.println("Mandando dados do Tiket Para o Front usando 138 bookListApi -----------");
         if (AppUtils.isConnectedToInternet(getActivity())) {
             showProgressDialog(getActivity());
             HashMap<String, String> params = new HashMap<>();
+            System.out.println("--------Has Depois Mandando dados do Tiket Para o Front usando 138 bookListApi ");
             params.put("user_id", MySharedPreferences.getMySharedPreferences().getUserId());
             params.put("access_token", MySharedPreferences.getMySharedPreferences().getAccessToken());
             params.put("device_id", MySharedPreferences.getMySharedPreferences().getDeviceId());
             params.put("event_id", strEventID);
             params.put("lang", MySharedPreferences.getMySharedPreferences().getLanguage());
-
+            System.out.println("DADOS DO HAS ABAIXO ");
+            System.out.println(Arrays.asList(params));
             Call<TicketListModel> call;
             call = RetrofitRestClient.getInstance().ticketListApi(params);
 
@@ -227,6 +237,7 @@ public class BookTicketActivity extends BaseActivity {
         if (AppUtils.isConnectedToInternet(getActivity())) {
             showProgressDialog(getActivity());
             HashMap<String, String> params = new HashMap<>();
+            System.out.println("Mandando dados do Tiket Para o Front usando 235 requestTicketApi ");
             params.put("user_id", MySharedPreferences.getMySharedPreferences().getUserId());
             params.put("access_token", MySharedPreferences.getMySharedPreferences().getAccessToken());
             params.put("device_id", MySharedPreferences.getMySharedPreferences().getDeviceId());

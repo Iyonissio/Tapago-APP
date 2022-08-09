@@ -6,7 +6,14 @@ public class RestConstant {
    //static final String BASE_URL = "https://voucherapp.xceltec.com/public/";
 
     // live
-    static final String BASE_URL = "http://162.0.237.160:4001";
+//    static final String BASE_URL = "http://162.0.237.160:4001";
+      //my local network speranza
+//    static final String BASE_URL = "http://192.168.18.71:8000";
+      //my wifi home
+//    static final String BASE_URL = "http://192.168.43.92:8000";
+
+//      static final String BASE_URL = "http://127.0.0.1:8000";
+    static final String BASE_URL = "https://api.tapago.speranza.co.mz";
 
     public static final String LOGIN_API = "api/login";
     public static final String SEND_OTP_API = "api/sendotp";

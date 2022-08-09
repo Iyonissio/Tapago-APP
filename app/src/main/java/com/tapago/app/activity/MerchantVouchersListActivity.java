@@ -22,6 +22,7 @@ import com.tapago.app.utils.MySharedPreferences;
 
 import java.net.SocketTimeoutException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
@@ -101,6 +102,7 @@ public class MerchantVouchersListActivity extends BaseActivity {
     }
 
     private void voucherListMerchantApi(final int page) {
+        System.out.println("Print Lista voucherListMerchantApi---------------------- ");
         if (AppUtils.isConnectedToInternet(getActivity())) {
             if (page == 1) {
                 try {
@@ -117,7 +119,7 @@ public class MerchantVouchersListActivity extends BaseActivity {
             params.put("device_id", MySharedPreferences.getMySharedPreferences().getDeviceId());
             params.put("lang", MySharedPreferences.getMySharedPreferences().getLanguage());
             params.put("page_number", String.valueOf(page));
-
+            System.out.println("Print Lista voucherListMerchantApi--------------------- ");
             Call<VoucherListMurchantModel> call;
             call = RetrofitRestClient.getInstance().voucherListMurchantApi(params);
 
@@ -218,6 +220,7 @@ public class MerchantVouchersListActivity extends BaseActivity {
     }
 
     public void approveDisapproveApi(String id, String isApprove) {
+        System.out.println("Aprovando Ticket--------------------------");
         if (AppUtils.isConnectedToInternet(getActivity())) {
             showProgressDialog(getActivity());
             HashMap<String, String> params = new HashMap<>();
@@ -227,6 +230,9 @@ public class MerchantVouchersListActivity extends BaseActivity {
             params.put("lang", MySharedPreferences.getMySharedPreferences().getLanguage());
             params.put("request_voucher_id", id);
             params.put("is_approve", isApprove);
+
+
+            System.out.println(Arrays.asList(params));
 
             Call<BasicModel> call;
             call = RetrofitRestClient.getInstance().approveDisApproveApi(params);

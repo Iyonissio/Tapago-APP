@@ -1,5 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/drawable/add_product_button_shape.xml" value="0.202" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/drawable/badge_background.xml" value="0.202" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/drawable/btn_primary_white.xml" value="0.202" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/drawable/shape_edit.xml" value="0.202" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout-large/activity_event_description.xml" value="0.3009833262077811" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout-large/activity_qr_code_redeem_history_vendor.xml" value="0.10047028644719966" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout-large/activity_redeem_qr_code.xml" value="0.33" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout-large/dialog_payment_option.xml" value="0.1675929884566054" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout-large/item_payment_history.xml" value="0.1675929884566054" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout-large/item_voucher.xml" value="0.2" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout-xlarge/activity_event_description.xml" value="0.27219945355191255" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout-xlarge/dialog_payment_option.xml" value="0.25" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout-xlarge/item_payment_history.xml" value="0.33" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/activity_book_ticket.xml" value="0.25" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/activity_cart.xml" value="0.16757246376811594" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/activity_create_event.xml" value="0.25" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/activity_event.xml" value="0.18478260869565216" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/activity_event_description.xml" value="0.36096014492753625" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/activity_event_payment.xml" value="0.1675929884566054" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/activity_help.xml" value="0.25" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/activity_murchant_vouchers_list.xml" value="0.25" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/activity_payment.xml" value="0.25" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/activity_payment_history.xml" value="0.18432971014492755" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/activity_paymentview.xml" value="0.18432971014492755" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/activity_qr_code_redeem_history_vendor.xml" value="0.1140625" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/activity_redeem_qr_code.xml" value="0.21" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/activity_shipping.xml" value="0.25" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/activity_shipping_payment_history.xml" value="0.16757246376811594" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/dialog_payment_option.xml" value="0.19927536231884058" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/dialog_request_voucher.xml" value="0.1" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/item_payment_history.xml" value="0.25" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/item_redeem_qr_code_history.xml" value="0.5" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/item_voucher.xml" value="0.1" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/list_row_item.xml" value="0.16757246376811594" />
+        <entry key="..\:/Speranza/TaPago/Files/Android/tapago-android/app/src/main/res/layout/row_choose_address.xml" value="0.1675929884566054" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

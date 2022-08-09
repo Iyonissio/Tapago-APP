@@ -24,6 +24,7 @@ import com.tapago.app.utils.MySharedPreferences;
 
 import java.io.File;
 import java.net.SocketTimeoutException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -161,8 +162,10 @@ public class OTPActivity extends BaseActivity {
             case R.id.btn_verify:
                 if (AppUtils.isConnectedToInternet(getActivity())) {
                     if (TextUtils.isEmpty(AppUtils.getText(firstPinView))) {
+                        System.out.println("Botao isempty verify OTP------------------------");
                         showSnackBar(getActivity(), enterOTP);
                     } else {
+                        System.out.println("Antes do Verify OTP------------------------");
                         VerifyOtpApi();
                     }
                 }
@@ -237,7 +240,9 @@ public class OTPActivity extends BaseActivity {
      * Call Verify OTP
      */
     private void VerifyOtpApi() {
+        System.out.print("Verificando OTP 1.1");
         if (AppUtils.isConnectedToInternet(getActivity())) {
+            System.out.print("Verificando OTP 1.2");
             showProgressDialog(getActivity());
             HashMap<String, String> map = new HashMap<>();
             map.put("mobile_no", countryCode + number);
@@ -245,7 +250,7 @@ public class OTPActivity extends BaseActivity {
             map.put("lang", MySharedPreferences.getMySharedPreferences().getLanguage());
             map.put("access_token", MySharedPreferences.getMySharedPreferences().getAccessToken());
             map.put("user_device_id", MySharedPreferences.getMySharedPreferences().getDeviceId());
-
+            System.out.println("HASMAP---------------->"+ Arrays.asList(map));
             Call<VerifyOtpModel> call;
             call = RetrofitRestClient.getInstance().verifyOtp(map);
 
@@ -258,19 +263,26 @@ public class OTPActivity extends BaseActivity {
                     final VerifyOtpModel verifyOtpModel;
                     if (response.isSuccessful()) {
                         verifyOtpModel = response.body();
+                        System.out.println("is Successful Antes do IF Verificacao OTP");
                         if (Objects.requireNonNull(verifyOtpModel).getCode() == 200) {
+                            System.out.println("IF do Verificacao OTP ----");
                             AppUtils.showToast(getActivity(), verifyOtpModel.getMessage());
                             if (RestConstant.PROFILE_UPDATE.equalsIgnoreCase("update")) {
+                                System.out.println("Update Verificacao OTP-------");
                                 updateApi();
                             } else {
+                                System.out.println("SignUPAPI Verificacao OTP");
                                 signUpAPi();
                             }
                         } else if (Objects.requireNonNull(verifyOtpModel).getCode() == 999) {
+                            System.out.println("Else iF SAIR do Verificacao OTP");
                             logout();
                         } else {
+                            System.out.println("Snackck bar Verificacao OTP IF do Verificacao OTP");
                             showSnackBar(getActivity(), verifyOtpModel.getMessage());
                         }
                     } else {
+                        System.out.println("Nao houve sucesso Verificacao OTP");
                         showSnackBar(getActivity(), response.message());
                     }
                 }
@@ -279,14 +291,17 @@ public class OTPActivity extends BaseActivity {
                 public void onFailure(@NonNull Call<VerifyOtpModel> call, @NonNull Throwable t) {
                     hideProgressDialog();
                     if (t instanceof SocketTimeoutException) {
+                        System.out.println("Caso de Falha verificacao OTP Connection Timeout");
                         showSnackBar(getActivity(), getString(R.string.connection_timeout));
                     } else {
+                        System.out.println("Caso de Falha verificacao OTP algo deu errado");
                         t.printStackTrace();
                         showSnackBar(getActivity(), getString(R.string.something_went_wrong));
                     }
                 }
             });
         } else {
+            System.out.println("Caso de Falha verificacao OTP IF do Verificacao OTP");
             showSnackBar(getActivity(), getString(R.string.no_internet));
         }
     }
@@ -366,6 +381,7 @@ public class OTPActivity extends BaseActivity {
      */
     private void signUpAPi() {
         if (AppUtils.isConnectedToInternet(getActivity())) {
+            System.out.println("API Para Cadastro-----------------------------");
             showProgressDialog(getActivity());
             HashMap<String, String> params = new HashMap<>();
             params.put("first_name", firstname);
@@ -379,19 +395,26 @@ public class OTPActivity extends BaseActivity {
             params.put("user_device_id", MySharedPreferences.getMySharedPreferences().getDeviceId());
             params.put("fcm_token", MySharedPreferences.getMySharedPreferences().getFirebaseId());
             params.put("lang", MySharedPreferences.getMySharedPreferences().getLanguage());
+            System.out.println("Dados para Cadastro---------------->"+Arrays.asList(params));
 
             Call<Login> call;
             call = RetrofitRestClient.getInstance().signUp(params);
-
+            System.out.println("Call--------"+call);
+            System.out.println("Call Com Request--------"+call.request());
             if (call == null) return;
+            System.out.println("Apos o Call");
             call.enqueue(new Callback<Login>() {
                 @Override
                 public void onResponse(@NonNull Call<Login> call, @NonNull Response<Login> response) {
+                    System.out.println("on RESPONSE Login");
                     hideProgressDialog();
                     final Login signUpResponse;
+                    System.out.println("Apos o final");
                     if (response.isSuccessful()) {
+                        System.out.println("entrou no iff sucesso");
                         signUpResponse = response.body();
                         if (Objects.requireNonNull(signUpResponse).getCode() == 200) {
+                            System.out.println("Code 200 Sucesso");
                             AppUtils.showToast(getActivity(), signUpResponse.getMessage());
                             setUserData(signUpResponse.getData());
                             Intent i = new Intent(getActivity(), CategoryActivity.class);
@@ -401,10 +424,13 @@ public class OTPActivity extends BaseActivity {
                             AppUtils.startFromRightToLeft(getActivity());
                         } else {
                             showSnackBar(getActivity(), signUpResponse.getMessage());
+                            System.out.println("REGISTER------------------1FIM");
                         }
                     } else {
+                        System.out.println("REGISTER------------------FIM2");
                         showSnackBar(getActivity(), response.message());
                     }
+                    System.out.println("REGISTER------------------FIM3");
                 }
 
                 @Override

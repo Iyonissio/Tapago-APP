@@ -50,6 +50,7 @@ public class RetrofitRestClient {
 
     public static ApiService getInstance() {
         if (baseApiService == null) {
+            System.out.println("Instancia Java");
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(RestConstant.BASE_URL)
                     .addConverterFactory(new ToStringConverterFactory())

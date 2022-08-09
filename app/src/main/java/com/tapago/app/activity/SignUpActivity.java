@@ -92,6 +92,7 @@ public class SignUpActivity extends BaseActivity {
                 if (signUpValidation()) {
                     System.out.println("Entrei na ValidacaoSignUP");
                     sendOtpApi();
+                    System.out.println("Entrei na ValidacaoSignUP Apos o SendOtpApi");
                 }
                 break;
             case R.id.txtLogin:
@@ -240,7 +241,7 @@ public class SignUpActivity extends BaseActivity {
             System.out.println("HASMAP---------------->"+Arrays.asList(map));
             Call<SendOtpModel> call;
             call = RetrofitRestClient.getInstance().sendOtp(map);
-            System.out.println("Antes do call return-------");
+            System.out.println("Antes do call return------- " + call.isCanceled());
             if (call == null) return;
             System.out.println("Apos o call return---------");
             call.enqueue(new Callback<SendOtpModel>() {
@@ -249,7 +250,9 @@ public class SignUpActivity extends BaseActivity {
                     System.out.print("Dentro do enfileiramento de Dados------");
                     hideProgressDialog();
                     final SendOtpModel sendOtpModel;
+                    System.out.print("Dentro do enfileiramento de Dados 2 ------");
                     if (response.isSuccessful()) {
+                        System.out.print("Dentro do enfileiramento de Dados 3 ------");
                         sendOtpModel = response.body();
                         if (Objects.requireNonNull(sendOtpModel).getCode() == 200) {
                             AppUtils.showToast(getActivity(), sendOtpModel.getMessage());
@@ -271,9 +274,11 @@ public class SignUpActivity extends BaseActivity {
                             showSnackBar(getActivity(), sendOtpModel.getMessage());
                         }
                     } else {
+                        System.out.println("Response Error " + response.headers());
                         showSnackBar(getActivity(), response.message());
                     }
                 }
+
 
                 @Override
                 public void onFailure(@NonNull Call<SendOtpModel> call, @NonNull Throwable t) {
@@ -289,6 +294,7 @@ public class SignUpActivity extends BaseActivity {
                     }
                 }
             });
+            System.out.println("Apos o call return---------2");
         } else {
             showSnackBar(getActivity(), getString(R.string.no_internet));
         }

@@ -110,17 +110,23 @@ public class TicketQrCodeActivity extends BaseActivity {
     }
 
     private void voucherListUserApi(final int page) {
+        System.out.println("Ticket Qr Code ----------------------");
         if (AppUtils.isConnectedToInternet(getActivity())) {
+            System.out.println("Ticket Qr Code 2----------------------");
             if (page == 1) {
+                System.out.println("Ticket Qr Code 3----------------------");
                 try {
+                    System.out.println("Ticket Qr Code 4----------------------");
                     mainProgress.setVisibility(View.VISIBLE);
                 } catch (Exception e) {
+                    System.out.println("Ticket Qr Code 5----------------------");
                     e.printStackTrace();
                 }
             } else {
                 ticketQrListAdapter.showLoadMore(true);
             }
             HashMap<String, String> params = new HashMap<>();
+            System.out.println("Ticket params ----------------------");
             params.put("user_id", MySharedPreferences.getMySharedPreferences().getUserId());
             params.put("access_token", MySharedPreferences.getMySharedPreferences().getAccessToken());
             params.put("device_id", MySharedPreferences.getMySharedPreferences().getDeviceId());
@@ -135,6 +141,7 @@ public class TicketQrCodeActivity extends BaseActivity {
             call.enqueue(new Callback<TicketQrModel>() {
                 @Override
                 public void onResponse(@NonNull final Call<TicketQrModel> call, @NonNull Response<TicketQrModel> response) {
+                    System.out.println("onResponse 1 ----------------------");
                     try {
                         mainProgress.setVisibility(View.GONE);
                     } catch (Exception e) {

@@ -556,6 +556,7 @@ public class CreateEventActivity extends BaseActivity implements PaymentMethodNo
                 list = new ArrayList<>();
                 float totalAmount = 0;
                 for (int i = 0; i < vCategoryArrayList.size(); i++) {
+                    System.out.println("Qualquer coisa---------------------");
                     View view = rcCategory.getChildAt(i);
                     EditText edQty = view.findViewById(R.id.edQty);
                     EditText edAmount = view.findViewById(R.id.edAmount);
@@ -695,6 +696,7 @@ public class CreateEventActivity extends BaseActivity implements PaymentMethodNo
 
 
     public void createPaymentApi(String eventId) {
+        System.out.println("Criando Pagamento de Eventto -------------------------------");
         if (AppUtils.isConnectedToInternet(getActivity())) {
             showProgressDialog(getActivity());
             HashMap<String, String> map = new HashMap<>();
